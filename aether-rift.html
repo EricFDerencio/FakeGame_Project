@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aether Rift</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="aether-rift.css" />
+  </head>
+  <body>
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-trail" aria-hidden="true"></div>
+
+    <section class="hero" id="hero">
+      <div class="layer layer-stars" id="layer-stars"></div>
+      <div class="layer layer-nebula" id="layer-nebula"></div>
+      <div class="layer layer-mountains" id="layer-mountains">
+        <svg
+          viewBox="0 0 1400 400"
+          preserveAspectRatio="xMidYMax slice"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M0 400 L0 280 L80 200 L160 250 L260 140 L360 210 L440 160 L520 220 L600 120 L700 180 L780 100 L860 170 L940 130 L1020 200 L1100 150 L1180 220 L1260 160 L1340 240 L1400 200 L1400 400 Z"
+            fill="rgba(15,22,50,0.9)"
+          />
+          <path
+            d="M0 400 L0 320 L100 270 L200 300 L300 230 L400 280 L500 200 L600 260 L700 190 L800 250 L900 210 L1000 270 L1100 220 L1200 280 L1300 240 L1400 290 L1400 400 Z"
+            fill="rgba(10,16,38,0.95)"
+          />
+          <path
+            d="M0 400 L0 360 L60 340 L130 355 L200 330 L280 345 L360 320 L450 350 L540 325 L640 345 L740 310 L840 340 L940 320 L1040 350 L1140 330 L1240 355 L1340 340 L1400 360 L1400 400 Z"
+            fill="rgba(8,12,28,1)"
+          />
+          <line
+            x1="0"
+            y1="200"
+            x2="1400"
+            y2="200"
+            stroke="rgba(200,168,75,0.06)"
+            stroke-width="1"
+          />
+          <rect x="155" y="155" width="6" height="60" fill="rgba(20,30,70,0.8)" />
+          <rect x="148" y="150" width="20" height="8" fill="rgba(20,30,70,0.8)" />
+          <rect x="152" y="143" width="12" height="9" fill="rgba(20,30,70,0.8)" />
+          <rect x="1120" y="133" width="5" height="50" fill="rgba(20,30,70,0.8)" />
+          <rect x="1114" y="128" width="17" height="7" fill="rgba(20,30,70,0.8)" />
+        </svg>
+      </div>
+      <div class="layer layer-glow" id="layer-glow"></div>
+      <div class="particles" id="particles"></div>
+      <div class="vignette"></div>
+
+      <div class="corner corner-tl">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+          <path d="M2 58 L2 2 L58 2" stroke="rgba(200,168,75,0.35)" stroke-width="1" />
+          <circle cx="2" cy="2" r="3" fill="rgba(200,168,75,0.6)" />
+        </svg>
+      </div>
+      <div class="corner corner-tr">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+          <path d="M2 58 L2 2 L58 2" stroke="rgba(200,168,75,0.35)" stroke-width="1" />
+          <circle cx="2" cy="2" r="3" fill="rgba(200,168,75,0.6)" />
+        </svg>
+      </div>
+      <div class="corner corner-bl">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+          <path d="M2 58 L2 2 L58 2" stroke="rgba(200,168,75,0.35)" stroke-width="1" />
+          <circle cx="2" cy="2" r="3" fill="rgba(200,168,75,0.6)" />
+        </svg>
+      </div>
+      <div class="corner corner-br">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+          <path d="M2 58 L2 2 L58 2" stroke="rgba(200,168,75,0.35)" stroke-width="1" />
+          <circle cx="2" cy="2" r="3" fill="rgba(200,168,75,0.6)" />
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <p class="game-tag">Open World Action RPG</p>
+        <h1 class="hero-title">AETHER<span>RIFT</span></h1>
+        <div class="hero-divider"></div>
+        <p class="hero-sub">
+          Entre os fragmentos de um mundo partido. Desperte forças antigas.
+          Forje seu destino além do véu.
+        </p>
+        <div class="hero-buttons">
+          <button type="button" class="btn btn-primary" data-scroll-target="characters">
+            Jogar Grátis
+          </button>
+          <button type="button" class="btn btn-secondary" data-scroll-target="characters">
+            Ver Resonadores
+          </button>
+        </div>
+      </div>
+
+      <button type="button" class="scroll-hint" data-scroll-target="characters" aria-label="Rolar para personagens">
+        <span>Rolar</span>
+        <span class="scroll-line"></span>
+      </button>
+    </section>
+
+    <section class="section-characters" id="characters" aria-labelledby="characters-title">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>Escolha seu Caminho</p>
+        <h2 class="section-title" id="characters-title" data-reveal>RESONADORES</h2>
+        <div class="section-line" data-reveal></div>
+      </div>
+
+      <div class="filter-tabs" data-reveal aria-label="Filtrar personagens por elemento">
+        <button type="button" class="tab active" data-filter="all">Todos</button>
+        <button type="button" class="tab" data-filter="pyro">Pyro</button>
+        <button type="button" class="tab" data-filter="cryo">Cryo</button>
+        <button type="button" class="tab" data-filter="aether">Aether</button>
+        <button type="button" class="tab" data-filter="void">Void</button>
+      </div>
+
+      <div class="cards-grid" id="cards-grid">
+        <article
+          class="char-card"
+          data-element="pyro"
+          data-delay="0"
+          style="--card-bg: linear-gradient(160deg, #1a0810 0%, #3d0f0f 40%, #1a0508 100%); --card-accent: #ff6b35; --card-glow: rgba(255,107,53,0.4);"
+        >
+          <div class="card-bg" aria-hidden="true">
+            <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMax meet">
+              <radialGradient id="kael-glow" cx="50%" cy="75%" r="55%">
+                <stop offset="0%" stop-color="#ff4500" stop-opacity="0.35" />
+                <stop offset="100%" stop-color="#1a0810" stop-opacity="0" />
+              </radialGradient>
+              <rect width="300" height="400" fill="url(#kael-glow)" />
+              <ellipse cx="150" cy="390" rx="80" ry="18" fill="rgba(255,80,20,0.25)" />
+              <path d="M115 270 Q150 310 185 270 L180 290 Q150 325 120 290 Z" fill="#2a0808" />
+              <rect x="122" y="200" width="56" height="75" rx="6" fill="#1f0a0a" />
+              <rect x="126" y="290" width="18" height="80" rx="4" fill="#1a0508" />
+              <rect x="156" y="295" width="18" height="75" rx="4" fill="#1a0508" />
+              <rect x="100" y="205" width="22" height="50" rx="6" fill="#1a0808" />
+              <rect x="178" y="205" width="22" height="50" rx="6" fill="#1a0808" />
+              <rect x="192" y="200" width="5" height="90" rx="2" fill="#c8a84b" opacity="0.8" />
+              <ellipse cx="150" cy="175" rx="24" ry="28" fill="#1f0a0a" />
+              <path d="M130 158 Q135 130 150 125 Q165 130 170 158 L168 165 Q155 150 145 155 Q138 150 132 165 Z" fill="#0d0303" />
+              <ellipse cx="142" cy="173" rx="4" ry="3" fill="rgba(255,100,30,0.9)" />
+              <ellipse cx="158" cy="173" rx="4" ry="3" fill="rgba(255,100,30,0.9)" />
+              <path d="M150 125 Q165 100 155 80 Q180 95 170 115 Q195 95 185 120 Q200 108 195 130" stroke="rgba(255,120,30,0.5)" stroke-width="3" fill="none" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="card-overlay"></div>
+          <div class="card-shine"></div>
+          <div class="card-border"></div>
+          <div class="rarity" aria-label="Raridade 5 estrelas"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <div class="element-badge" aria-hidden="true">PY</div>
+          <div class="card-content">
+            <p class="char-role">Guerreiro / Pyro</p>
+            <h3 class="char-name">KAEL</h3>
+            <p class="char-desc">Lâmina forjada na chama dos mundos caídos. Sua raiva queima mais que qualquer fogo.</p>
+            <div class="stat-bars">
+              <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill" style="--stat-w:90%"></div></div></div>
+              <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill" style="--stat-w:48%"></div></div></div>
+              <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill" style="--stat-w:70%"></div></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="char-card"
+          data-element="cryo"
+          data-delay="1"
+          style="--card-bg: linear-gradient(160deg, #060d1e 0%, #0a2040 40%, #061218 100%); --card-accent: #5bc4e8; --card-glow: rgba(91,196,232,0.4);"
+        >
+          <div class="card-bg" aria-hidden="true">
+            <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMax meet">
+              <radialGradient id="lyra-glow" cx="50%" cy="70%" r="55%">
+                <stop offset="0%" stop-color="#0080c8" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="#060d1e" stop-opacity="0" />
+              </radialGradient>
+              <rect width="300" height="400" fill="url(#lyra-glow)" />
+              <ellipse cx="150" cy="392" rx="70" ry="14" fill="rgba(30,120,200,0.3)" />
+              <polygon points="50,300 60,270 70,300" fill="rgba(91,196,232,0.15)" />
+              <polygon points="230,320 245,285 260,320" fill="rgba(91,196,232,0.12)" />
+              <path d="M110 280 Q150 330 190 280 L195 310 Q150 355 105 310 Z" fill="#050f22" />
+              <rect x="124" y="200" width="52" height="85" rx="6" fill="#070d20" />
+              <rect x="128" y="295" width="16" height="75" rx="4" fill="#060d1e" />
+              <rect x="156" y="298" width="16" height="72" rx="4" fill="#060d1e" />
+              <rect x="90" y="140" width="4" height="120" rx="2" fill="#1a3050" />
+              <ellipse cx="92" cy="138" rx="10" ry="14" fill="rgba(91,196,232,0.4)" />
+              <ellipse cx="150" cy="175" rx="22" ry="26" fill="#070d20" />
+              <path d="M132 162 Q138 130 150 122 Q162 130 168 162" fill="#0a1828" />
+              <ellipse cx="142" cy="174" rx="4" ry="3" fill="rgba(91,196,232,0.95)" />
+              <ellipse cx="158" cy="174" rx="4" ry="3" fill="rgba(91,196,232,0.95)" />
+            </svg>
+          </div>
+          <div class="card-overlay"></div>
+          <div class="card-shine"></div>
+          <div class="card-border"></div>
+          <div class="rarity" aria-label="Raridade 5 estrelas"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <div class="element-badge" aria-hidden="true">CR</div>
+          <div class="card-content">
+            <p class="char-role">Maga / Cryo</p>
+            <h3 class="char-name">LYRA</h3>
+            <p class="char-desc">A voz do inverno eterno. Cada feitiço que lança congela o tempo ao redor.</p>
+            <div class="stat-bars">
+              <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill" style="--stat-w:72%"></div></div></div>
+              <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill" style="--stat-w:55%"></div></div></div>
+              <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill" style="--stat-w:82%"></div></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="char-card"
+          data-element="aether"
+          data-delay="2"
+          style="--card-bg: linear-gradient(160deg, #0a0a18 0%, #1a0a35 40%, #0a0a1a 100%); --card-accent: #a855f7; --card-glow: rgba(168,85,247,0.4);"
+        >
+          <div class="card-bg" aria-hidden="true">
+            <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMax meet">
+              <radialGradient id="zhen-glow" cx="50%" cy="65%" r="60%">
+                <stop offset="0%" stop-color="#8020d0" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#0a0a18" stop-opacity="0" />
+              </radialGradient>
+              <rect width="300" height="400" fill="url(#zhen-glow)" />
+              <circle cx="150" cy="200" r="70" stroke="rgba(168,85,247,0.1)" stroke-width="1" fill="none" />
+              <ellipse cx="150" cy="390" rx="65" ry="14" fill="rgba(120,40,200,0.3)" />
+              <path d="M108 260 L100 380 L130 380 L150 310 L170 380 L200 380 L192 260 Z" fill="#0c0820" />
+              <rect x="120" y="195" width="60" height="70" rx="5" fill="#0c0820" />
+              <rect x="98" y="200" width="22" height="60" rx="6" fill="#0c0820" />
+              <rect x="180" y="200" width="22" height="60" rx="6" fill="#0c0820" />
+              <circle cx="109" cy="265" r="8" fill="rgba(168,85,247,0.3)" />
+              <circle cx="191" cy="265" r="8" fill="rgba(168,85,247,0.3)" />
+              <ellipse cx="150" cy="172" rx="23" ry="27" fill="#0c0820" />
+              <path d="M130 158 Q136 125 150 118 Q164 125 170 158" fill="#1a1030" />
+              <ellipse cx="141" cy="172" rx="4" ry="3.5" fill="rgba(168,85,247,0.95)" />
+              <ellipse cx="159" cy="172" rx="4" ry="3.5" fill="rgba(168,85,247,0.95)" />
+            </svg>
+          </div>
+          <div class="card-overlay"></div>
+          <div class="card-shine"></div>
+          <div class="card-border"></div>
+          <div class="rarity" aria-label="Raridade 5 estrelas"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <div class="element-badge" aria-hidden="true">AE</div>
+          <div class="card-content">
+            <p class="char-role">Invocador / Aether</p>
+            <h3 class="char-name">ZHEN</h3>
+            <p class="char-desc">Dobra a realidade com a ponta dos dedos. O espaço entre mundos obedece sua vontade.</p>
+            <div class="stat-bars">
+              <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill" style="--stat-w:80%"></div></div></div>
+              <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill" style="--stat-w:62%"></div></div></div>
+              <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill" style="--stat-w:78%"></div></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="char-card"
+          data-element="void"
+          data-delay="3"
+          style="--card-bg: linear-gradient(160deg, #050508 0%, #0f0818 40%, #050508 100%); --card-accent: #22d3a8; --card-glow: rgba(34,211,168,0.4);"
+        >
+          <div class="card-bg" aria-hidden="true">
+            <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMax meet">
+              <radialGradient id="nyx-glow" cx="50%" cy="70%" r="55%">
+                <stop offset="0%" stop-color="#006050" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#050508" stop-opacity="0" />
+              </radialGradient>
+              <rect width="300" height="400" fill="url(#nyx-glow)" />
+              <ellipse cx="150" cy="390" rx="65" ry="14" fill="rgba(20,180,130,0.25)" />
+              <line x1="80" y1="200" x2="120" y2="200" stroke="rgba(34,211,168,0.2)" stroke-width="1" />
+              <line x1="180" y1="200" x2="220" y2="200" stroke="rgba(34,211,168,0.2)" stroke-width="1" />
+              <rect x="130" y="280" width="15" height="85" rx="4" fill="#050508" />
+              <rect x="155" y="283" width="15" height="82" rx="4" fill="#050508" />
+              <rect x="118" y="195" width="64" height="90" rx="5" fill="#080812" />
+              <rect x="98" y="210" width="22" height="55" rx="5" fill="#080812" />
+              <rect x="180" y="210" width="22" height="55" rx="5" fill="#080812" />
+              <ellipse cx="150" cy="170" rx="24" ry="27" fill="#080812" />
+              <path d="M128 162 Q150 148 172 162 L170 173 Q150 163 130 173 Z" fill="#0f1520" />
+              <rect x="132" y="170" width="36" height="10" rx="2" fill="rgba(34,211,168,0.25)" />
+              <ellipse cx="142" cy="175" rx="5" ry="3" fill="rgba(34,211,168,0.9)" />
+              <ellipse cx="158" cy="175" rx="5" ry="3" fill="rgba(34,211,168,0.9)" />
+              <path d="M78 220 L100 265" stroke="rgba(34,211,168,0.6)" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="card-overlay"></div>
+          <div class="card-shine"></div>
+          <div class="card-border"></div>
+          <div class="rarity" aria-label="Raridade 5 estrelas"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <div class="element-badge" aria-hidden="true">VO</div>
+          <div class="card-content">
+            <p class="char-role">Assassina / Void</p>
+            <h3 class="char-name">NYX</h3>
+            <p class="char-desc">Emerge das sombras sem rastro. Seus golpes apagam memórias e deixam apenas silêncio.</p>
+            <div class="stat-bars">
+              <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill" style="--stat-w:85%"></div></div></div>
+              <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill" style="--stat-w:40%"></div></div></div>
+              <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill" style="--stat-w:95%"></div></div></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="detail-panel" id="detail-panel" data-reveal>
+        <div class="detail-stat">
+          <div class="detail-stat-value">4</div>
+          <div class="detail-stat-label">Resonadores</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-value">4</div>
+          <div class="detail-stat-label">Elementos</div>
+        </div>
+        <div class="detail-stat">
+          <div class="detail-stat-value">S5</div>
+          <div class="detail-stat-label">Max Rank</div>
+        </div>
+      </div>
+    </section>
+
+    <script src="aether-rift.js"></script>
+  </body>
+</html>
