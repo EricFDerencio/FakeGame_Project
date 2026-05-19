@@ -112,118 +112,14 @@
       </div>
 
       <div class="filter-tabs" data-reveal aria-label="Filtrar personagens por elemento">
-        <button type="button" class="tab active" data-filter="all">Todos</button>
-        <button type="button" class="tab" data-filter="pyro">Pyro</button>
-        <button type="button" class="tab" data-filter="cryo">Cryo</button>
-        <button type="button" class="tab" data-filter="aether">Aether</button>
-        <button type="button" class="tab" data-filter="void">Void</button>
+        <button type="button" class="tab active" data-filter="all" aria-pressed="true">Todos</button>
+        <button type="button" class="tab" data-filter="pyro" aria-pressed="false">Pyro</button>
+        <button type="button" class="tab" data-filter="cryo" aria-pressed="false">Cryo</button>
+        <button type="button" class="tab" data-filter="aether" aria-pressed="false">Aether</button>
+        <button type="button" class="tab" data-filter="void" aria-pressed="false">Void</button>
       </div>
 
-      <div class="cards-grid" id="cards-grid">
-        <article
-          class="char-card"
-          data-element="pyro"
-          data-delay="0"
-          style="--card-bg: linear-gradient(160deg, #1a0810 0%, #3d0f0f 40%, #1a0508 100%); --card-accent: #ff6b35; --card-glow: rgba(255,107,53,0.4);"
-        >
-          <div class="card-bg" aria-hidden="true">
-            <img src="assets/pyro.png" alt="" loading="lazy" />
-          </div>
-          <div class="card-overlay"></div>
-          <div class="card-shine"></div>
-          <div class="card-border"></div>
-          <div class="rarity" aria-label="Raridade 5 estrelas"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <div class="element-badge" aria-hidden="true">PY</div>
-          <div class="card-content">
-            <p class="char-role">Guerreiro / Pyro</p>
-            <h3 class="char-name">KAEL</h3>
-            <p class="char-desc">Lâmina forjada na chama dos mundos caídos. Sua raiva queima mais que qualquer fogo.</p>
-            <div class="stat-bars">
-              <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill" style="--stat-w:90%"></div></div></div>
-              <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill" style="--stat-w:48%"></div></div></div>
-              <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill" style="--stat-w:70%"></div></div></div>
-            </div>
-          </div>
-        </article>
-
-        <article
-          class="char-card"
-          data-element="cryo"
-          data-delay="1"
-          style="--card-bg: linear-gradient(160deg, #060d1e 0%, #0a2040 40%, #061218 100%); --card-accent: #5bc4e8; --card-glow: rgba(91,196,232,0.4);"
-        >
-          <div class="card-bg" aria-hidden="true">
-            <img src="assets/crio.png" alt="" loading="lazy" />
-          </div>
-          <div class="card-overlay"></div>
-          <div class="card-shine"></div>
-          <div class="card-border"></div>
-          <div class="rarity" aria-label="Raridade 5 estrelas"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <div class="element-badge" aria-hidden="true">CR</div>
-          <div class="card-content">
-            <p class="char-role">Maga / Cryo</p>
-            <h3 class="char-name">LYRA</h3>
-            <p class="char-desc">A voz do inverno eterno. Cada feitiço que lança congela o tempo ao redor.</p>
-            <div class="stat-bars">
-              <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill" style="--stat-w:72%"></div></div></div>
-              <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill" style="--stat-w:55%"></div></div></div>
-              <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill" style="--stat-w:82%"></div></div></div>
-            </div>
-          </div>
-        </article>
-
-        <article
-          class="char-card"
-          data-element="aether"
-          data-delay="2"
-          style="--card-bg: linear-gradient(160deg, #0a0a18 0%, #1a0a35 40%, #0a0a1a 100%); --card-accent: #a855f7; --card-glow: rgba(168,85,247,0.4);"
-        >
-          <div class="card-bg" aria-hidden="true">
-            <img src="assets/aether.png" alt="" loading="lazy" />
-          </div>
-          <div class="card-overlay"></div>
-          <div class="card-shine"></div>
-          <div class="card-border"></div>
-          <div class="rarity" aria-label="Raridade 5 estrelas"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <div class="element-badge" aria-hidden="true">AE</div>
-          <div class="card-content">
-            <p class="char-role">Invocador / Aether</p>
-            <h3 class="char-name">ZHEN</h3>
-            <p class="char-desc">Dobra a realidade com a ponta dos dedos. O espaço entre mundos obedece sua vontade.</p>
-            <div class="stat-bars">
-              <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill" style="--stat-w:80%"></div></div></div>
-              <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill" style="--stat-w:62%"></div></div></div>
-              <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill" style="--stat-w:78%"></div></div></div>
-            </div>
-          </div>
-        </article>
-
-        <article
-          class="char-card"
-          data-element="void"
-          data-delay="3"
-          style="--card-bg: linear-gradient(160deg, #050508 0%, #0f0818 40%, #050508 100%); --card-accent: #22d3a8; --card-glow: rgba(34,211,168,0.4);"
-        >
-          <div class="card-bg" aria-hidden="true">
-            <img src="assets/void.png" alt="" loading="lazy" />
-          </div>
-          <div class="card-overlay"></div>
-          <div class="card-shine"></div>
-          <div class="card-border"></div>
-          <div class="rarity" aria-label="Raridade 5 estrelas"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <div class="element-badge" aria-hidden="true">VO</div>
-          <div class="card-content">
-            <p class="char-role">Assassino / Void</p>
-            <h3 class="char-name">NYX</h3>
-            <p class="char-desc">Emerge das sombras sem rastro. Seus golpes apagam memórias e deixam apenas silêncio.</p>
-            <div class="stat-bars">
-              <div class="stat-row"><span class="stat-label">ATK</span><div class="stat-track"><div class="stat-fill" style="--stat-w:85%"></div></div></div>
-              <div class="stat-row"><span class="stat-label">DEF</span><div class="stat-track"><div class="stat-fill" style="--stat-w:40%"></div></div></div>
-              <div class="stat-row"><span class="stat-label">SPD</span><div class="stat-track"><div class="stat-fill" style="--stat-w:95%"></div></div></div>
-            </div>
-          </div>
-        </article>
-      </div>
+      <div class="cards-grid" id="cards-grid"></div>
 
       <div class="detail-panel" id="detail-panel" data-reveal>
         <div class="detail-stat">
@@ -274,23 +170,7 @@
         </div>
       </div>
 
-      <div class="feature-grid">
-        <article class="feature-card" data-reveal>
-          <span class="feature-index">01</span>
-          <h3>Biomas vivos</h3>
-          <p>Tempestades, ruínas e criaturas alteram rotas conforme o Rift se expande.</p>
-        </article>
-        <article class="feature-card" data-reveal>
-          <span class="feature-index">02</span>
-          <h3>Facções em conflito</h3>
-          <p>Suas alianças mudam missões, preços, patrulhas e encontros pelo mapa.</p>
-        </article>
-        <article class="feature-card" data-reveal>
-          <span class="feature-index">03</span>
-          <h3>Segredos verticais</h3>
-          <p>Escalada, portais e correntes etéreas revelam camadas escondidas do mundo.</p>
-        </article>
-      </div>
+      <div class="feature-grid" id="feature-grid"></div>
     </section>
 
     <script src="aether-rift.js"></script>
