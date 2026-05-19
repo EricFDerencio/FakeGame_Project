@@ -459,6 +459,44 @@ function initCharactersSection() {
   initCharacterFilters();
 }
 
+function initSideNav() {
+  const navIcons = document.querySelectorAll('.side-nav-icon');
+  const sectionIds = ['hero', 'characters', 'world'];
+  const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+
+  if (!sections.length || !navIcons.length) return;
+
+  function setActive(targetId) {
+    navIcons.forEach((icon) => {
+      const isActive = icon.dataset.scrollTarget === targetId;
+
+      icon.classList.toggle('active', isActive);
+    });
+  }
+
+  function updateActiveOnScroll() {
+    const scrollY = window.scrollY + window.innerHeight * 0.35;
+    let currentId = sectionIds[0];
+
+    for (let i = 0; i < sections.length; i += 1) {
+      if (sections[i].offsetTop <= scrollY) {
+        currentId = sectionIds[i];
+      }
+    }
+
+    setActive(currentId);
+  }
+
+  navIcons.forEach((icon) => {
+    icon.addEventListener('click', () => {
+      setActive(icon.dataset.scrollTarget);
+    });
+  });
+
+  window.addEventListener('scroll', updateActiveOnScroll, { passive: true });
+  updateActiveOnScroll();
+}
+
 function init() {
   if (!hasRequiredElements()) return;
 
@@ -471,7 +509,9 @@ function init() {
   generateParticles();
   initSmoothScroll();
   initCharactersSection();
+  initSideNav();
   handleScroll();
 }
 
 init();
+
