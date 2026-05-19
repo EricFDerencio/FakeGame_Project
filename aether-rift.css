@@ -33,9 +33,12 @@ body {
 #cursor-trail {
     display: none;
     position: fixed;
+    top: 0;
+    left: 0;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
+    will-change: transform;
 }
 
 #cursor {
@@ -43,7 +46,8 @@ body {
     width: 12px;
     height: 12px;
     background: var(--color-gold);
-    transition: transform 0.1s ease, opacity 0.2s;
+    opacity: 0;
+    transition: opacity 0.2s;
     mix-blend-mode: screen;
 }
 
@@ -52,7 +56,13 @@ body {
     width: 32px;
     height: 32px;
     border: 1px solid rgba(200, 168, 75, 0.35);
-    transition: left 0.12s ease, top 0.12s ease;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+#cursor.is-visible,
+#cursor-trail.is-visible {
+    opacity: 1;
 }
 
 @media (pointer: fine) {
@@ -423,9 +433,12 @@ body {
     transition: transform 0.4s ease;
 }
 
-.card-bg svg {
+.card-bg img {
     width: 100%;
     height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
 }
 
 .char-card:hover .card-bg {
@@ -634,9 +647,255 @@ body {
     margin-top: 4px;
 }
 
+.section-cta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-world {
+    position: relative;
+    padding: 130px 40px 150px;
+    background:
+        radial-gradient(ellipse 70% 50% at 78% 36%, rgba(91, 196, 232, 0.12), transparent 70%),
+        radial-gradient(ellipse 60% 45% at 18% 80%, rgba(168, 85, 247, 0.1), transparent 72%),
+        linear-gradient(180deg, var(--color-bg) 0%, #080f1d 46%, #040812 100%);
+    overflow: hidden;
+}
+
+.section-world::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(200, 168, 75, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 168, 75, 0.025) 1px, transparent 1px);
+    background-size: 90px 90px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 0%, transparent 76%);
+    pointer-events: none;
+}
+
+.world-backdrop {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.world-orbit {
+    position: absolute;
+    border: 1px solid rgba(200, 168, 75, 0.12);
+    border-radius: 50%;
+    transform: rotate(-18deg);
+}
+
+.world-orbit-outer {
+    top: 80px;
+    right: -180px;
+    width: 620px;
+    height: 620px;
+}
+
+.world-orbit-inner {
+    top: 188px;
+    right: -68px;
+    width: 380px;
+    height: 380px;
+    border-color: rgba(91, 196, 232, 0.14);
+}
+
+.world-layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+    align-items: center;
+    gap: 72px;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.world-copy {
+    max-width: 560px;
+}
+
+.world-title {
+    text-align: left;
+    max-width: 620px;
+}
+
+.world-lead,
+.world-text,
+.world-map,
+.feature-card {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.world-lead.visible,
+.world-text.visible,
+.world-map.visible,
+.feature-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.world-lead {
+    margin-top: 28px;
+    color: rgba(240, 232, 208, 0.84);
+    font-size: clamp(19px, 2.5vw, 28px);
+    font-weight: 300;
+    line-height: 1.55;
+}
+
+.world-text {
+    max-width: 500px;
+    margin-top: 24px;
+    color: rgba(232, 223, 200, 0.58);
+    font-size: 14px;
+    line-height: 1.9;
+    letter-spacing: 0.4px;
+}
+
+.world-map {
+    position: relative;
+    aspect-ratio: 1;
+    min-height: 360px;
+    border: 1px solid rgba(200, 168, 75, 0.16);
+    background:
+        radial-gradient(circle at 50% 50%, rgba(200, 168, 75, 0.08), transparent 40%),
+        linear-gradient(145deg, rgba(8, 18, 42, 0.82), rgba(4, 8, 18, 0.62));
+    clip-path: polygon(18px 0%, 100% 0%, calc(100% - 18px) 100%, 0% 100%);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42), inset 0 0 60px rgba(200, 168, 75, 0.04);
+    transition-delay: 0.2s;
+}
+
+.world-map::after {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.045);
+    pointer-events: none;
+}
+
+.world-map img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: saturate(0.92) contrast(1.08);
+}
+
+.world-map::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        radial-gradient(circle at 50% 42%, transparent 20%, rgba(5, 10, 21, 0.22) 70%),
+        linear-gradient(180deg, rgba(5, 10, 21, 0.08), rgba(5, 10, 21, 0.72));
+    pointer-events: none;
+}
+
+.world-map::after {
+    z-index: 2;
+}
+
+.feature-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1160px;
+    margin: 70px auto 0;
+}
+
+.feature-card {
+    min-height: 190px;
+    padding: 28px;
+    border: 1px solid rgba(200, 168, 75, 0.14);
+    background: rgba(8, 16, 34, 0.68);
+    backdrop-filter: blur(8px);
+    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+}
+
+.feature-card:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+.feature-card:nth-child(3) {
+    transition-delay: 0.24s;
+}
+
+.feature-index {
+    display: inline-block;
+    color: var(--color-gold);
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 34px;
+}
+
+.feature-card h3 {
+    color: var(--color-title);
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: rgba(232, 223, 200, 0.56);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
 @media (max-width: 720px) {
     .section-characters {
         padding: 88px 18px 100px;
+    }
+
+    .section-world {
+        padding: 92px 18px 110px;
+    }
+
+    .world-layout,
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .world-layout {
+        gap: 42px;
+    }
+
+    .world-title {
+        text-align: center;
+    }
+
+    .world-copy {
+        max-width: none;
+        text-align: center;
+    }
+
+    .world-text {
+        max-width: none;
+    }
+
+    .world-map {
+        min-height: 280px;
+    }
+
+    .feature-grid {
+        margin-top: 46px;
     }
 
     .cards-grid {
